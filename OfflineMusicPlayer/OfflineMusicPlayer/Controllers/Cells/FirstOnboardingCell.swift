@@ -8,14 +8,13 @@
 import UIKit
 import SnapKit
 
-final class FirstCollectionViewCell: UICollectionViewCell {
+final class FirstOnboardingCell: UICollectionViewCell {
 // MARK: - GUI Variables
-    private lazy var iconView: UIImage = {
-        let image = UIImage()
-        //image.images = UIImage(named: "image1")
+    private lazy var iconView: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "image1")
         return image
     }()
-    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -34,6 +33,9 @@ final class FirstCollectionViewCell: UICollectionViewCell {
     //MARK: - Initializations
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubview(iconView)
+        addSubview(titleLabel)
+        addSubview(descriptionLabel)
         setupUI()
     }
     
@@ -43,11 +45,22 @@ final class FirstCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Private methods
     private func setupUI() {
-        
-        
+        backgroundColor = .black
         setupConstraints()
     }
     
     private func setupConstraints() {
+        iconView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.trailing.leading.equalToSuperview()
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(iconView.snp.bottom).offset(50)
+            make.leading.trailing.equalTo(20)
+        }
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.trailing.leading.equalTo(20)
+        }
         }
 }
