@@ -13,18 +13,25 @@ final class FirstOnboardingCell: UICollectionViewCell {
     private lazy var iconView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "image1")
+        image.layer.position = center
         return image
     }()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 28)//Manrope
+        label.font = .boldSystemFont(ofSize: 30)
+//        label.font = UIFont(name: "Manrope-Bold", size: 28)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.textColor = UIColor(named: "gray")
-        label.font = .systemFont(ofSize: 16)//Manrope
+//        label.font = .boldSystemFont(ofSize: 16)
+        label.font = UIFont(name: "Manrope-Regular", size: 16)
         return label
     }()
     
@@ -54,16 +61,16 @@ final class FirstOnboardingCell: UICollectionViewCell {
     
     private func setupConstraints() {
         iconView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.trailing.leading.equalToSuperview()
+            make.top.equalToSuperview().inset(-75)
+            make.trailing.leading.equalToSuperview().inset(30)
         }
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(iconView.snp.bottom).offset(50)
-            make.leading.trailing.equalTo(20)
+            make.top.equalTo(iconView.snp.bottom).offset(100)
+            make.leading.trailing.equalToSuperview().inset(60)
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.trailing.leading.equalTo(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.trailing.leading.equalToSuperview().inset(30)
         }
         }
 }
