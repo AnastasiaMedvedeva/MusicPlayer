@@ -39,8 +39,7 @@ final class FirstOnboardingCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(iconView)
-        addSubview(titleLabel)
-        addSubview(descriptionLabel)
+        addSubviews([titleLabel, descriptionLabel])
         setupUI()
     }
     

@@ -13,7 +13,7 @@ final class FourthOnboardingCell: UICollectionViewCell {
         private lazy var iconView: UIImageView = {
             let view = UIImageView()
             view.backgroundColor = UIColor(named: "purple")
-            view.layer.cornerRadius = 10
+            view.layer.cornerRadius = 25
             view.layer.position = center
             return view
         }()
@@ -49,9 +49,7 @@ final class FourthOnboardingCell: UICollectionViewCell {
         override init(frame: CGRect) {
             super.init(frame: frame)
             addSubview(iconView)
-            addSubview(titleLabel)
-            addSubview(freeLabel)
-            addSubview(priceLabel)
+            addSubviews([titleLabel, freeLabel, priceLabel])
             setupUI()
         }
         
@@ -60,8 +58,8 @@ final class FourthOnboardingCell: UICollectionViewCell {
         }
         // MARK: - Methods
     func setup(_ slide: OnboardingSlide) {
-        iconView = slide.view ?? UIImageView()
-            titleLabel.text = slide.title
+        iconView.image = slide.image
+        titleLabel.text = slide.title
         priceLabel.text = slide.description
         freeLabel.text = slide.freeLabel
         

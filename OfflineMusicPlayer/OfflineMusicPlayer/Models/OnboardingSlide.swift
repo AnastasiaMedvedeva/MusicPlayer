@@ -11,7 +11,5 @@ struct OnboardingSlide {
     let image: UIImage?
     let title: String?
     let description: String?
-    
-    let view: UIImageView?
     let freeLabel: String?
 }

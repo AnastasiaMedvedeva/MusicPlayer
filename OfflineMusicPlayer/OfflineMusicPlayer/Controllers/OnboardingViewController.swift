@@ -64,6 +64,13 @@ class OnboardingViewController: UIViewController {
         collectionView.register(FirstOnboardingCell.self, forCellWithReuseIdentifier: "FirstOnboardingCell")
         collectionView.register(ThirdOnboardingCell.self, forCellWithReuseIdentifier: "ThirdOnboardingCell")
         collectionView.register(FourthOnboardingCell.self, forCellWithReuseIdentifier: "FourthOnboardingCell")
+        slides = [
+        OnboardingSlide(image: UIImage(named:"image1"), title: "Your music library is always with you", description: "Search for any song and listen any time",freeLabel: nil),
+        OnboardingSlide(image: UIImage(named: "image2"), title: "Import from any source and offline", description: "Listen to music from different sources even without internet access", freeLabel: nil),
+        OnboardingSlide(image: UIImage(named: "image3"), title: "We value your opinion", description: "Your feedback is important to us and will help us make our app even better for you", freeLabel: nil),
+                        
+        OnboardingSlide(image: UIImage(named: "image4"), title: "Get all the features with no limits", description: "then 349,00 RUB/Week", freeLabel: "3-Day free trial,")
+        ]
     }
 // MARK: - Private methods
     private func setupUI() {
@@ -111,9 +118,9 @@ extension OnboardingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         guard let slide = slides[indexPath.row] as? OnboardingSlide else { return UICollectionViewCell()}
-        
+
         if let label = slide.freeLabel,
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FourthOnboardingCell", for: indexPath) as? FourthOnboardingCell {
                 cell.setup(slide)
