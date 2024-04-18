@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
+extension UIView {
         func addSubviews(_ views: [UIImageView]) {
             views.forEach { view in
                 addSubview(view)
