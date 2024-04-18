@@ -18,8 +18,7 @@ class OnboardingViewController: UIViewController {
         layout.itemSize = CGSize(width: width, height: width + 40)
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: width, height: width), collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        
         return collectionView
     }()
     private lazy var pageControl: UIPageControl = {
@@ -44,11 +43,21 @@ class OnboardingViewController: UIViewController {
         return button
     }()
 
+    // MARK: - Properties
+    var slides: [OnboardingSlide] = []
+    
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
         setupUI()
         collectionView.register(FirstOnboardingCell.self, forCellWithReuseIdentifier: "FirstOnboardingCell")
+        slides = [
+            OnboardingSlide(image: UIImage(named: "image1") ?? UIImage.add, title: "Your music library is always with you", description: "Search for any song and listen any time"),
+            OnboardingSlide(image: UIImage(named: "image2") ?? UIImage.add, title: "Import from any source and offline", description: "Listen to music "),
+            OnboardingSlide(image: UIImage(named: "image3") ?? UIImage.add , title: "We value your opinion", description: "Your feedback is important to us and will help us make our app even better for you"),
+            OnboardingSlide(image: "image4") ?? UIImage.add, title: "Get all the features with no limits", description: //add 2 labels)            ]
     }
 // MARK: - Private methods
     private func setupUI() {
@@ -82,11 +91,12 @@ extension OnboardingViewController: UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return slides.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FirstOnboardingCell", for: indexPath) as? FirstOnboardingCell else { return UICollectionViewCell()}
+        cell.setup(slides[indexPath.row])
         return cell
     }
 

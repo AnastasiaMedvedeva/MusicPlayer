@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D48187F2BD0584400D2FFCB /* ListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48187E2BD0584400D2FFCB /* ListItems.swift */; };
+		5D91BBCE2BD0EF8600DF2F1A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D91BBCD2BD0EF8600DF2F1A /* OnboardingSlide.swift */; };
 		5DD0FDC52BCEFBBD004A590C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD0FDC42BCEFBBD004A590C /* AppDelegate.swift */; };
 		5DD0FDC92BCEFBBD004A590C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD0FDC82BCEFBBD004A590C /* OnboardingViewController.swift */; };
 		5DD0FDCE2BCEFBBD004A590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD0FDCD2BCEFBBD004A590C /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		5D48187E2BD0584400D2FFCB /* ListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItems.swift; sourceTree = "<group>"; };
+		5D91BBCD2BD0EF8600DF2F1A /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		5DD0FDC12BCEFBBD004A590C /* OfflineMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD0FDC42BCEFBBD004A590C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DD0FDC82BCEFBBD004A590C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D91BBCF2BD0F1C200DF2F1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D91BBCD2BD0EF8600DF2F1A /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5DD0FDB82BCEFBBD004A590C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 			children = (
 				5DD0FDC42BCEFBBD004A590C /* AppDelegate.swift */,
 				5D48187E2BD0584400D2FFCB /* ListItems.swift */,
+				5D91BBCF2BD0F1C200DF2F1A /* Models */,
 				5DD0FDDD2BCF12E6004A590C /* Controllers */,
 				5DD0FDCD2BCEFBBD004A590C /* Assets.xcassets */,
 				5DD0FDCF2BCEFBBD004A590C /* LaunchScreen.storyboard */,
@@ -174,6 +185,7 @@
 				5DD0FDDC2BCF12B1004A590C /* FirstOnboardingCell.swift in Sources */,
 				5DD0FDE02BCF1861004A590C /* SecondOnboardingCelll.swift in Sources */,
 				5DD0FDE22BCF1874004A590C /* ThirdOnboardingCell.swift in Sources */,
+				5D91BBCE2BD0EF8600DF2F1A /* OnboardingSlide.swift in Sources */,
 				5DD0FDC92BCEFBBD004A590C /* OnboardingViewController.swift in Sources */,
 				5D48187F2BD0584400D2FFCB /* ListItems.swift in Sources */,
 				5DD0FDC52BCEFBBD004A590C /* AppDelegate.swift in Sources */,
