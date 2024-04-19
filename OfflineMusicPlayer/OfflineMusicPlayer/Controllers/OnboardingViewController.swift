@@ -93,7 +93,7 @@ class OnboardingViewController: UIViewController {
         }
         continueButton.snp.makeConstraints { make in
             make.height.equalTo(60)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(50)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(60)
             make.leading.trailing.equalToSuperview().inset(20)
         }
     }

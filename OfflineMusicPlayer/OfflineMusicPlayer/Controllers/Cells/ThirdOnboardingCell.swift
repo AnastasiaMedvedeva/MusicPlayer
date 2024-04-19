@@ -12,6 +12,7 @@ final class ThirdOnboardingCell: UICollectionViewCell {
     // MARK: - GUI Variables
         private lazy var containerView: UIImageView = {
             let view = UIImageView()
+            view.backgroundColor = .blue
             return view
         }()
     
@@ -24,13 +25,14 @@ final class ThirdOnboardingCell: UICollectionViewCell {
     private lazy var feedbackImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "evaluationImage3")
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         return image
     }()
     private lazy var feedbackLabel: UILabel = {
         let label = UILabel()
         label.text = "Ethan Clark"
-        label.textColor = .red
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
@@ -66,8 +68,12 @@ final class ThirdOnboardingCell: UICollectionViewCell {
         //MARK: - Initializations
         override init(frame: CGRect) {
             super.init(frame: frame)
-            addSubviews([feedbackTextImage, feedbackImage, leftLikeImage,
-                                      rightLikeImage])
+//            addSubview(containerView)
+//            containerView.
+            addSubview(feedbackTextImage)
+            addSubview(feedbackImage)
+            addSubview(leftLikeImage)
+            addSubview(rightLikeImage)
             addSubview(feedbackLabel)
             
             addSubview(titleLabel)
@@ -91,32 +97,38 @@ final class ThirdOnboardingCell: UICollectionViewCell {
         }
         
         private func setupConstraints() {
-            
-            
+//            containerView.snp.makeConstraints { make in
+//                make.top.equalToSuperview().inset(0)
+//                make.trailing.leading.equalToSuperview().inset(30)
+//                make.height.equalTo(100)
+//            }
             feedbackTextImage.snp.makeConstraints { make in
-                make.top.equalToSuperview().inset(-70)
+                make.top.equalToSuperview().inset(-60)
                 make.leading.equalToSuperview().inset(0)
-                make.trailing.equalToSuperview().inset(5)
+                make.trailing.equalToSuperview().inset(15)
             }
             feedbackImage.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.bottom.equalToSuperview()
+                make.top.equalTo(feedbackTextImage.snp.bottom).offset(10)
             }
+            
             feedbackLabel.snp.makeConstraints { make in
-                make.bottom.equalToSuperview().inset(20)
+                make.top.equalToSuperview().inset(150)
+                make.leading.equalToSuperview().inset(175)
             }
-            
+           
             leftLikeImage.snp.makeConstraints { make in
-                make.leading.equalTo(containerView.snp.leading).inset(0)
-                make.centerY.equalTo(containerView.snp.centerY)
+                make.leading.equalToSuperview().inset(5)
+                make.top.equalToSuperview().inset(80)
             }
+            //---------------
             rightLikeImage.snp.makeConstraints { make in
-                make.trailing.equalToSuperview().inset(0)
-                make.bottom.equalToSuperview().inset(-17)
+                make.trailing.equalToSuperview().inset(5)
+                make.top.equalToSuperview().inset(160)
             }
-            
+            //--------------
             titleLabel.snp.makeConstraints { make in
-                make.top.equalToSuperview().offset(100)
+                make.bottom.equalToSuperview().inset(10)
                 make.leading.trailing.equalToSuperview().inset(60)
             }
             descriptionLabel.snp.makeConstraints { make in
