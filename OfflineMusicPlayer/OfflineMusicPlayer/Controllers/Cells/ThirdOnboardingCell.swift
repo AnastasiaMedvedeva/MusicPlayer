@@ -28,6 +28,11 @@ final class ThirdOnboardingCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFill
         return image
     }()
+    private lazy var photoImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "photoClark")
+        return image
+    }()
     private lazy var feedbackLabel: UILabel = {
         let label = UILabel()
         label.text = "Ethan Clark"
@@ -75,7 +80,7 @@ final class ThirdOnboardingCell: UICollectionViewCell {
             addSubview(leftLikeImage)
             addSubview(rightLikeImage)
             addSubview(feedbackLabel)
-            
+            addSubview(photoImage)
             addSubview(titleLabel)
             addSubview(descriptionLabel)
             setupUI()
@@ -97,11 +102,6 @@ final class ThirdOnboardingCell: UICollectionViewCell {
         }
         
         private func setupConstraints() {
-//            containerView.snp.makeConstraints { make in
-//                make.top.equalToSuperview().inset(0)
-//                make.trailing.leading.equalToSuperview().inset(30)
-//                make.height.equalTo(100)
-//            }
             feedbackTextImage.snp.makeConstraints { make in
                 make.top.equalToSuperview().inset(-60)
                 make.leading.equalToSuperview().inset(0)
@@ -116,17 +116,21 @@ final class ThirdOnboardingCell: UICollectionViewCell {
                 make.top.equalToSuperview().inset(150)
                 make.leading.equalToSuperview().inset(175)
             }
-           
+            photoImage.snp.makeConstraints { make in
+                make.width.height.equalTo(75)
+                make.top.equalToSuperview().inset(116)
+                make.leading.equalToSuperview().inset(75)
+            }
             leftLikeImage.snp.makeConstraints { make in
                 make.leading.equalToSuperview().inset(5)
                 make.top.equalToSuperview().inset(80)
             }
-            //---------------
+         
             rightLikeImage.snp.makeConstraints { make in
                 make.trailing.equalToSuperview().inset(5)
                 make.top.equalToSuperview().inset(160)
             }
-            //--------------
+     
             titleLabel.snp.makeConstraints { make in
                 make.bottom.equalToSuperview().inset(10)
                 make.leading.trailing.equalToSuperview().inset(60)

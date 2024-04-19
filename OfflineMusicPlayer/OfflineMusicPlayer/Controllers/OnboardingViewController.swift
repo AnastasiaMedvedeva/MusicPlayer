@@ -26,11 +26,18 @@ class OnboardingViewController: UIViewController {
             pageControl.pageIndicatorTintColor = UIColor(named: "gray")
             pageControl.currentPageIndicatorTintColor = UIColor(named: "purple")
             pageControl.isUserInteractionEnabled = false
+            pageControl.preferredCurrentPageIndicatorImage = UIImage(named: "indicator.svg")
+//            pageControl.transform = CGAffineTransform(scaleX: 2, y: 2)
             pageControl.backgroundStyle = .automatic
             pageControl.numberOfPages = 4
             return pageControl
         }()
         
+    private lazy var pagerStack: UIStackView = {
+        let pagerStack = UIStackView()
+        return pagerStack
+    }()
+    
     private lazy var continueButton: UIButton = {
         let button = UIButton()
         button.setTitle("Continue", for: .normal)
@@ -55,6 +62,9 @@ class OnboardingViewController: UIViewController {
             }
         }
     }
+    // MARK: - Private properties
+    private var pagers: [UIView] = []
+    private var width: NSLayoutConstraint?
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +97,7 @@ class OnboardingViewController: UIViewController {
             make.bottom.equalTo(continueButton.snp.top)
             make.leading.trailing.equalToSuperview().inset(0)
         }
+        
         pageControl.snp.makeConstraints { make in
             make.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
             make.centerY.equalTo(view.safeAreaLayoutGuide.snp.centerY).offset(0)
@@ -118,12 +129,12 @@ extension OnboardingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         guard let slide = slides[indexPath.row] as? OnboardingSlide else { return UICollectionViewCell()}
-
+        
         if let label = slide.freeLabel,
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FourthOnboardingCell", for: indexPath) as? FourthOnboardingCell {
-                cell.setup(slide)
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FourthOnboardingCell", for: indexPath) as? FourthOnboardingCell {
+            cell.setup(slide)
             return cell
         } else if let icon = slide.image,
                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FirstOnboardingCell", for: indexPath) as? FirstOnboardingCell {
@@ -147,3 +158,4 @@ extension OnboardingViewController: UICollectionViewDataSource {
             currentPage = Int(scrollView.contentOffset.x / width)
         }
     }
+
