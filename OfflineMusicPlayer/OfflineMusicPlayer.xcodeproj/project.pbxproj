@@ -10,7 +10,6 @@
 		5D48187F2BD0584400D2FFCB /* ListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48187E2BD0584400D2FFCB /* ListItems.swift */; };
 		5D826CCC2BD14C9300EEE6A3 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D826CCB2BD14C9300EEE6A3 /* Manrope-Bold.ttf */; };
 		5D826CCE2BD14C9D00EEE6A3 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D826CCD2BD14C9D00EEE6A3 /* Manrope-Regular.ttf */; };
-		5D826CD22BD152C800EEE6A3 /* Manrope-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D826CD12BD152C800EEE6A3 /* Manrope-ExtraBold.ttf */; };
 		5D826CD82BD163A000EEE6A3 /* Ex+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D826CD72BD163A000EEE6A3 /* Ex+UIView.swift */; };
 		5D91BBCE2BD0EF8600DF2F1A /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D91BBCD2BD0EF8600DF2F1A /* OnboardingSlide.swift */; };
 		5DD0FDC52BCEFBBD004A590C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD0FDC42BCEFBBD004A590C /* AppDelegate.swift */; };
@@ -27,7 +26,6 @@
 		5D48187E2BD0584400D2FFCB /* ListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItems.swift; sourceTree = "<group>"; };
 		5D826CCB2BD14C9300EEE6A3 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
 		5D826CCD2BD14C9D00EEE6A3 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
-		5D826CD12BD152C800EEE6A3 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Manrope-ExtraBold.ttf"; path = "../../../../../Manrope/static/Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
 		5D826CD72BD163A000EEE6A3 /* Ex+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIView.swift"; sourceTree = "<group>"; };
 		5D91BBCD2BD0EF8600DF2F1A /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		5DD0FDC12BCEFBBD004A590C /* OfflineMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +62,6 @@
 		5D826CD02BD14CC000EEE6A3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5D826CD12BD152C800EEE6A3 /* Manrope-ExtraBold.ttf */,
 				5D826CCB2BD14C9300EEE6A3 /* Manrope-Bold.ttf */,
 				5D826CCD2BD14C9D00EEE6A3 /* Manrope-Regular.ttf */,
 			);
@@ -202,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D826CD22BD152C800EEE6A3 /* Manrope-ExtraBold.ttf in Resources */,
 				5D826CCE2BD14C9D00EEE6A3 /* Manrope-Regular.ttf in Resources */,
 				5DD0FDD12BCEFBBD004A590C /* LaunchScreen.storyboard in Resources */,
 				5D826CCC2BD14C9300EEE6A3 /* Manrope-Bold.ttf in Resources */,

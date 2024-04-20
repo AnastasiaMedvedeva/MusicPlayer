@@ -26,8 +26,7 @@ class OnboardingViewController: UIViewController {
             pageControl.pageIndicatorTintColor = UIColor(named: "gray")
             pageControl.currentPageIndicatorTintColor = UIColor(named: "purple")
             pageControl.isUserInteractionEnabled = false
-            pageControl.preferredCurrentPageIndicatorImage = UIImage(named: "indicator.svg")
-//            pageControl.transform = CGAffineTransform(scaleX: 2, y: 2)
+//            pageControl.preferredCurrentPageIndicatorImage = UIImage(named: "indicator.svg")
             pageControl.backgroundStyle = .automatic
             pageControl.numberOfPages = 4
             return pageControl
