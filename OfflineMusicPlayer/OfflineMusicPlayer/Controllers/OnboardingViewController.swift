@@ -13,7 +13,8 @@ class OnboardingViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let width = (view.frame.width - 10)
+        layout.minimumLineSpacing = 0
+        let width = (view.frame.width)
         layout.itemSize = CGSize(width: width, height: width + 20)
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: width, height: width), collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
